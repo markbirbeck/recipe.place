@@ -1,6 +1,6 @@
 {
   "name": "recipe.place",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "The recipe place. Where recipes meet.",
   "main": "index.js",
   "scripts": {
