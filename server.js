@@ -1,5 +1,6 @@
 var express = require('express');
 var exphbs  = require('express-handlebars');
+var fs = require('fs');
 var app = express();
 
 var root = __dirname + '/app';
@@ -14,8 +15,17 @@ app.get('/', function (req, res){
 });
 
 app.get('/recipe/chicken/whole/roast', function (req, res){
-  res.render('recipe', function (err, html){
-    res.send(html);
+  fs.readFile(__dirname + '/data/recipe/chicken/whole/roast.json', function (err, data){
+    if (err){
+      res.status(404)
+        .render('404', function (err, html){
+          res.send(html);
+        });
+    }else{
+      res.render('recipe', JSON.parse(data), function (err, html){
+        res.send(html);
+      });
+    }
   });
 });
 
