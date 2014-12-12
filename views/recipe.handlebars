@@ -1,6 +1,11 @@
         <header>recipe.place</header>
 
+        {{#with params}}
+        {{ingredient}} > {{state}} > {{method}}
+        {{/with}}
+
         <main role="main">
+            {{#with recipe}}
             <article vocab="http://schema.org/" typeof="Recipe">
                 <h1 property="name">{{name}}</h1>
 
@@ -43,6 +48,7 @@
                     </ol>
                 </section>
             </article>
+            {{/with}}
         </main>
 
         <footer>(C) recipe.place</footer>

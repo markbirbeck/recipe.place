@@ -27,7 +27,8 @@ app.get('/recipe/:ingredient/:state/:method', function (req, res){
           res.send(html);
         });
     }else{
-      res.render('recipe', JSON.parse(data), function (err, html){
+      res.render('recipe', { params: params, recipe: JSON.parse(data) },
+          function (err, html){
         res.send(html);
       });
     }
