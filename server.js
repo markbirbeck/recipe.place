@@ -1,21 +1,31 @@
 var express = require('express');
+var exphbs  = require('express-handlebars');
 var app = express();
 
 var root = __dirname + '/app';
 
+app.engine('handlebars', exphbs({defaultLayout: 'h5bp'}));
+app.set('view engine', 'handlebars');
+
 app.get('/', function (req, res){
-  res.sendFile(root + '/index.html');
+  res.render('index', function (err, html){
+    res.send(html);
+  });
 });
 
 app.get('/recipe/chicken/whole/roast', function (req, res){
-  res.sendFile(root + '/recipe/chicken/whole/roast.html');
+  res.render('recipe', function (err, html){
+    res.send(html);
+  });
 });
 
 app.use(express.static(root));
 
 app.use(function(req, res, next){
   res.status(404)
-    .sendFile(root + '/404.html');
+    .render('404', function (err, html){
+      res.send(html);
+    });
 });
 
 var server = app.listen(3000, function (){
