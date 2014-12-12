@@ -24,3 +24,6 @@ deploy:
             key_secret: $AWS_SECRET_ACCESS_KEY
             bucket_url: s3://$AWS_BUCKET
             source_dir: app/
+
+        - heroku-deploy:
+            key-name: HEROKU_SSH_KEY
