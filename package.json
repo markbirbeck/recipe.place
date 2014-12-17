@@ -1,15 +1,17 @@
 {
   "name": "recipe.place",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "The recipe place. Where recipes meet.",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Mark Birbeck <mark.birbeck@gmail.com> (http://markbirbeck.com/)",
   "license": "MIT",
   "dependencies": {
-    "express": "~4.10.5",
-    "express-handlebars": "~1.1.0"
+    "express": "4.10.5",
+    "express-handlebars": "1.1.0",
+    "config": "1.9.0",
+    "js-yaml": "3.2.3",
+    "request": "2.51.0"
   }
 }
