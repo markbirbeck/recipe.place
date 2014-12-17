@@ -9,7 +9,7 @@
   "author": "Mark Birbeck <mark.birbeck@gmail.com> (http://markbirbeck.com/)",
   "license": "MIT",
   "dependencies": {
-    "express": "~4.10.5",
-    "express-handlebars": "~1.1.0"
+    "express": "4.10.5",
+    "express-handlebars": "1.1.0"
   }
 }
