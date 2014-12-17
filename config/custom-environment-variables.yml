@@ -1,2 +1,5 @@
 backend:
   endpoint: BACKEND_ENDPOINT
+
+google:
+  siteVerification: GOOGLE_SITEVERIFICATION

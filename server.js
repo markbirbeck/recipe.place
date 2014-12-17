@@ -11,6 +11,15 @@ var root = __dirname + '/app';
 app.engine('handlebars', exphbs({defaultLayout: 'h5bp'}));
 app.set('view engine', 'handlebars');
 
+if (config.has('google.siteVerification')){
+  var googleSiteVerification = 'google' + config.get('google.siteVerification') + '.html';
+
+  console.log('Adding Google site verification code: ', googleSiteVerification);
+  app.get('/' + googleSiteVerification, function (req, res){
+    res.send('google-site-verification: ' + googleSiteVerification);
+  });
+}
+
 app.get('/', function (req, res){
   res.render('index', function (err, html){
     res.send(html);
