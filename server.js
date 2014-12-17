@@ -14,7 +14,7 @@ app.set('view engine', 'handlebars');
 if (config.has('google.siteVerification')){
   var googleSiteVerification = 'google' + config.get('google.siteVerification') + '.html';
 
-  console.log('Adding Google site verification code: ', googleSiteVerification);
+  console.log('Adding Google site verification code:', googleSiteVerification);
   app.get('/' + googleSiteVerification, function (req, res){
     res.send('google-site-verification: ' + googleSiteVerification);
   });
@@ -60,5 +60,5 @@ var server = app.listen(process.env.PORT || 3000, function (){
   var port = server.address().port;
 
   console.log('Listening at http://%s:%s', host, port);
-  console.log('Forwarding to ', config.backend.endpoint);
+  console.log('Forwarding to', config.backend.endpoint);
 });
