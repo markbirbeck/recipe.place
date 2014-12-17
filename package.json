@@ -10,6 +10,9 @@
   "license": "MIT",
   "dependencies": {
     "express": "4.10.5",
-    "express-handlebars": "1.1.0"
+    "express-handlebars": "1.1.0",
+    "config": "1.9.0",
+    "js-yaml": "3.2.3",
+    "request": "2.51.0"
   }
 }
